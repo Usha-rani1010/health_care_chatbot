@@ -19,17 +19,17 @@ st.set_page_config(
 # --------------------------------------------------
 load_dotenv()
 
-api_key = os.getenv("GROQ_API_KEY")
+api_key = os.getenv("Groq_key")
 
 if not api_key:
     try:
-        api_key = st.secrets["GROQ_API_KEY"]
+        api_key = st.secrets["Groq_key"]
     except (FileNotFoundError, KeyError):
         api_key = None
 
 if not api_key:
     st.error(
-        "GROQ_API_KEY is missing. Add it to your local "
+        "Groq_key is missing. Add it to your local "
         ".env file or Streamlit Cloud Secrets."
     )
     st.stop()
